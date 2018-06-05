@@ -1,7 +1,6 @@
 package water.fvec;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import water.MRTask;
 import water.Scope;
@@ -97,7 +96,7 @@ public class NewChunkSpeedTest extends TestUtil {
 
 
   // todo: This should be changed to test after Spencer PR is in.
-  @Ignore
+  @Test
   public void testParseLong(){
     double startTime = System.currentTimeMillis();
     for (int index=0; index<numberLoops; index++)
@@ -108,7 +107,7 @@ public class NewChunkSpeedTest extends TestUtil {
             +PrettyPrint.msecs((long) endTime, false));
   }
 
-  @Ignore
+  @Test
   public void testParseLongConsts(){
     double startTime = System.currentTimeMillis();
     for (int index=0; index<numberLoops; index++)
