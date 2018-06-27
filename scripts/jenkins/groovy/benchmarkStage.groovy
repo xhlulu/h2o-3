@@ -16,7 +16,8 @@ def call(final pipelineContext, final stageConfig) {
   dir (ML_BENCHMARK_ROOT) {
     retry(3) {
       timeout(time: 1, unit: 'MINUTES') {
-        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: H2O_OPS_CREDS_ID, url: 'https://github.com/h2oai/ml-benchmark']]]
+        // FIXME
+        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'mr/ita/vanilla-xgb']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: H2O_OPS_CREDS_ID, url: 'https://github.com/h2oai/ml-benchmark']]]
       }
     }
   }
@@ -27,6 +28,7 @@ def call(final pipelineContext, final stageConfig) {
   sh "rm -rf ${outputPath} && mkdir -p ${outputPath}"
 
   def benchmarkEnv = [
+          "PATH_PREFIX=${ML_BENCHMARK_ROOT}",
           "DATASETS_PATH=${stageConfig.datasetsPath}",
           "TEST_CASES_PATH=${stageConfig.testCasesPath}",
           "OUTPUT_PATH=${outputPath}",

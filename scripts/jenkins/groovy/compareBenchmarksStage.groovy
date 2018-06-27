@@ -65,6 +65,12 @@ def call(final pipelineContext, final stageConfig, final benchmarkFolderConfig) 
                         'train_time_min': 171,
                         'train_time_max': 187
                     ]
+                ],
+                'higgs': [
+                    100: [
+                        'train_time_min': 203,
+                        'train_time_max': 218
+                    ]
                 ]
         ],
         'xgb-vanilla': [
@@ -78,6 +84,12 @@ def call(final pipelineContext, final stageConfig, final benchmarkFolderConfig) 
                     100: [
                         'train_time_min': 58,
                         'train_time_max': 83
+                    ]
+                ],
+                'higgs': [
+                    100: [
+                        'train_time_min': 203,
+                        'train_time_max': 218
                     ]
                 ]
         ]
