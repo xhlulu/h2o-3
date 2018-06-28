@@ -298,7 +298,7 @@ public class PredictCsv {
             }
 
             int lastOne = out.length-1;
-            for (int i=0; i < out.length; i++) {
+            for (int i=0; i < lastOne+1; i++) {
               output.write(myDoubleToString(out[i]));
 
               if (i < lastOne)

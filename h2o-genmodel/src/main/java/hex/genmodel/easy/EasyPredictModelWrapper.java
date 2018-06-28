@@ -392,12 +392,15 @@ public class EasyPredictModelWrapper implements Serializable {
 
     DimReductionModelPrediction p = new DimReductionModelPrediction();
     p.dimensions = preds;
-    if (m instanceof GlrmMojoModel && ((GlrmMojoModel) m)._archetypes_raw != null && this.enableGLRMReconstruct)  // only for verion 1.10 or higher
+    if (m instanceof GlrmMojoModel && ((GlrmMojoModel) m)._archetypes_raw != null && this.enableGLRMReconstruct) { // only for verion 1.10 or higher
       p.reconstructed = ((GlrmMojoModel) m).impute_data(preds, new double[m.nfeatures()], ((GlrmMojoModel) m)._nnums,
               ((GlrmMojoModel) m)._ncats, ((GlrmMojoModel) m)._permutation, ((GlrmMojoModel) m)._reverse_transform,
               ((GlrmMojoModel) m)._normMul, ((GlrmMojoModel) m)._normSub, ((GlrmMojoModel) m)._losses,
               ((GlrmMojoModel) m)._transposed, ((GlrmMojoModel) m)._archetypes_raw, ((GlrmMojoModel) m)._catOffsets,
               ((GlrmMojoModel) m)._numLevels);
+    }
+    p.reconstructedRowData = reconstructedToRowData(p.reconstructed);
+
     return p;
   }
   /**

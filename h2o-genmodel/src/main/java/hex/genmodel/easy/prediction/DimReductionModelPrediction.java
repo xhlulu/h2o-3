@@ -1,5 +1,7 @@
 package hex.genmodel.easy.prediction;
 
+import hex.genmodel.easy.RowData;
+
 /**
  * TODO
  */
@@ -12,5 +14,6 @@ public class DimReductionModelPrediction extends AbstractPrediction {
      * the enum columns from the integer columns if necessary.
      */
     public double[] reconstructed;
+    public RowData reconstructedRowData;
 
 }
