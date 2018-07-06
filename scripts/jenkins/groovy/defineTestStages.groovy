@@ -65,7 +65,7 @@ def call(final pipelineContext) {
     ],
     [
       stageName: 'Py2.7 Demos', target: 'test-py-demos', pythonVersion: '2.7',
-      timeoutValue: 30, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 60, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'Py2.7 Init', target: 'test-py-init', pythonVersion: '2.7',
@@ -73,19 +73,19 @@ def call(final pipelineContext) {
     ],
     [
       stageName: 'Py2.7 Small', target: 'test-pyunit-small', pythonVersion: '2.7',
-      timeoutValue: 90, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 190, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'Py3.5 Small', target: 'test-pyunit-small', pythonVersion: '3.5',
-      timeoutValue: 90, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 190, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'Py3.6 Small', target: 'test-pyunit-small', pythonVersion: '3.6',
-      timeoutValue: 90, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 190, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'Py2.7 Small AutoML', target: 'test-pyunit-small-automl', pythonVersion: '2.7',
-      timeoutValue: 90, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 190, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'Py3.5 Small AutoML', target: 'test-pyunit-small-automl', pythonVersion: '3.5',
@@ -93,7 +93,7 @@ def call(final pipelineContext) {
     ],
     [
       stageName: 'Py3.6 Small AutoML', target: 'test-pyunit-small-automl', pythonVersion: '3.6',
-      timeoutValue: 90, component: pipelineContext.getBuildConfig().COMPONENT_PY
+      timeoutValue: 190, component: pipelineContext.getBuildConfig().COMPONENT_PY
     ],
     [
       stageName: 'R3.4 Init', target: 'test-r-init', rVersion: '3.4.1',
@@ -101,11 +101,11 @@ def call(final pipelineContext) {
     ],
     [
       stageName: 'R3.4 Small', target: 'test-r-small', rVersion: '3.4.1',
-      timeoutValue: 125, component: pipelineContext.getBuildConfig().COMPONENT_R
+      timeoutValue: 300, component: pipelineContext.getBuildConfig().COMPONENT_R
     ],
     [
       stageName: 'R3.4 Small Client Mode', target: 'test-r-small-client-mode', rVersion: '3.4.1',
-      timeoutValue: 155, component: pipelineContext.getBuildConfig().COMPONENT_R
+      timeoutValue: 300, component: pipelineContext.getBuildConfig().COMPONENT_R
     ],
     [
       stageName: 'R3.4 Small AutoML', target: 'test-r-small-automl', rVersion: '3.4.1',
